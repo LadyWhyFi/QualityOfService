@@ -1,0 +1,31 @@
+#As per RFC 3665
+
+   Alice                     Bob
+     |                        |
+     |       INVITE F1        |
+     |----------------------->|
+     |    180 Ringing F2      |
+     |<-----------------------|
+     |                        |
+     |       200 OK F3        |
+     |<-----------------------|
+     |         ->ACK F4       |
+     |----------------------->|
+     |   Both Way RTP Media   |
+     |<======================>|
+     |                        |
+     |         BYE F5         |
+     |----------------------->|
+     |       200 OK F6        |
+     |<-----------------------|
+     |                        |
+ 
+ACK sip:bob@client.biloxi.example.com SIP/2.0
+Via: SIP/2.0/TCP client.atlanta.example.com:5060;branch=z9hG4bK74bd5
+Max-Forwards: 70
+From: Alice <sip:alice@atlanta.example.com>;tag=9fxced76sl
+To: Bob <sip:bob@biloxi.example.com>;tag=8321234356
+Call-ID: 3848276298220188511@atlanta.example.com
+CSeq: 1 ACK
+Content-Length: 0
+/* RTP streams are established between Alice and Bob */
